@@ -1,5 +1,6 @@
 package racingcar;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class RacingGame {
@@ -26,5 +27,20 @@ public class RacingGame {
             System.out.println();
         }
         System.out.println();
+    }
+
+    public void printWinners(List<Car> cars) {
+        int maxPosition = 0;
+        for (Car car : cars)
+            if (car.getPosition() > maxPosition) {
+                maxPosition = car.getPosition();
+            }
+        List<String> winners = new ArrayList<>();
+        for (Car car : cars) {
+            if (car.getPosition() == maxPosition) {
+                winners.add(car.getCarName());
+            }
+        }
+        System.out.println("우승자: " + winners + "가 최종 우승했습니다.");
     }
 }

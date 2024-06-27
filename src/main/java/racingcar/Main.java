@@ -30,21 +30,7 @@ public class Main {
             racingGame.printCarsDistance();
         }
         // 우승자 출력
-        printWinners(carList);
+        racingGame.printWinners(carList);
     }
 
-    private static void printWinners(List<Car> cars) {
-        int maxPosition = 0;
-        for (Car car : cars)
-            if (car.getPosition() > maxPosition) {
-                maxPosition = car.getPosition();
-            }
-        List<String> winners = new ArrayList<>();
-        for (Car car : cars) {
-            if (car.getPosition() == maxPosition) {
-                winners.add(car.getCarName());
-            }
-        }
-        System.out.println("우승자: " + winners + "가 최종 우승했습니다.");
-    }
 }
