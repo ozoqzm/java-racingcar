@@ -2,7 +2,7 @@ package racingcar;
 
 import java.util.Random;
 
-public class Car {
+public class Car implements MovableStrategy {
     // 상수
     private static final int FORWARD_NUM = 4;
     private int position; // 현재 위치
@@ -13,7 +13,7 @@ public class Car {
         this.position = position;
     }
     public void move(int number) {
-        if (number >= FORWARD_NUM) {
+        if (isMove(number)) {
             position++;
         }
     }
@@ -28,5 +28,10 @@ public class Car {
 
     public String getCarName() {
         return carName;
+    }
+
+    @Override
+    public boolean isMove(int number) {
+        return number >= 4;
     }
 }
