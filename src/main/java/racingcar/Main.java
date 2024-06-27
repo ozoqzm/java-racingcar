@@ -12,6 +12,11 @@ public class Main {
         String carNameList = sc.nextLine();
         String[] arrayString = carNameList.split(",");
 
+        for (String str: arrayString) {
+            if (str.length() > 5)
+                throw new IllegalArgumentException("자동차 이름은 5자 이하여야 합니다.");
+        }
+
         System.out.println("시도할 횟수는 몇회인가요?");
         int tryCount = sc.nextInt();
 
